@@ -120,7 +120,7 @@ def ite(ref_img, sen_img, pretrained_model=None):
     print('Using device: ' + str(device))
     print('waiting...')
     save_sen_tran_name = 'save.jpg'
-    parameter_learn_rate = 0.00025
+    parameter_learn_rate = 0.001
     max_iter = 3000
     stop_iter = 150
     ref_tensor = Variable(torch.tensor(np.float32(np.array(ref_img))).to(device)).unsqueeze(0).unsqueeze(0)
@@ -158,6 +158,6 @@ def ite(ref_img, sen_img, pretrained_model=None):
 
 if __name__ == "__main__":
     pretrained_model = None # The test demo could be run without pretrained model within iteration
-    ref_img = Image.open('E:/Tang/final_data/train/reference/1_1_4.jpg')
-    sen_img = Image.open('E:/Tang/final_data/train/sensed/1_1_4.jpg')
+    ref_img = Image.open('./test_images/1_9_1.jpg')
+    sen_img = Image.open('./test_images/1_9_3.jpg')
     ite(ref_img, sen_img, pretrained_model)
